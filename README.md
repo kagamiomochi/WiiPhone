@@ -19,3 +19,5 @@ Python 3.11以上が必要です。
 3. 依存ライブラリをインストールします。
    ```bash
    pip install -r requirements.txt
+
+### Linux の場合
