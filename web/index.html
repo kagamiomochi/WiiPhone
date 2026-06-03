@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smartphone PC Remote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="setup-screen" class="screen active">
+        <h1>PC Remote Setup</h1>
+        <div class="input-group">
+            <label for="ws-url">WebSocket URL:</label>
+            <input type="text" id="ws-url" value="ws://192.168.x.x:8765" placeholder="ws://192.168.1.100:8765">
+        </div>
+        <div class="input-group">
+            <label for="auth-token">Auth Token:</label>
+            <input type="text" id="auth-token" placeholder="Enter token from PC">
+        </div>
+        <button id="connect-btn">Connect & Start</button>
+        <p id="setup-status" class="status-disconnected">Status: disconnected</p>
+    </div>
+
+    <div id="control-screen" class="screen">
+        <div class="header">
+            <div id="status-indicator" class="status-connected">connected</div>
+            <button id="center-btn">Center (Reset Position)</button>
+        </div>
+
+        <div class="sliders">
+            <div class="slider-group">
+                <label for="sensitivity">Sensitivity: <span id="sens-val">1.5</span></label>
+                <input type="range" id="sensitivity" min="0.1" max="5.0" step="0.1" value="1.5">
+            </div>
+            <div class="slider-group">
+                <label for="deadzone">Deadzone: <span id="dead-val">0.5</span></label>
+                <input type="range" id="deadzone" min="0.0" max="3.0" step="0.1" value="0.5">
+            </div>
+        </div>
+
+        <div class="scroll-area" id="scroll-area">
+            <p>2-Finger Swipe to Scroll Here</p>
+        </div>
+
+        <div class="mouse-buttons">
+            <button class="mouse-btn" id="btn-left" data-btn="left">Left</button>
+            <button class="mouse-btn" id="btn-mid" data-btn="middle">Mid</button>
+            <button class="mouse-btn" id="btn-right" data-btn="right">Right</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
