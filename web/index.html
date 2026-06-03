@@ -24,7 +24,15 @@
     <div id="control-screen" class="screen">
         <div class="header">
             <div id="status-indicator" class="status-connected">connected</div>
-            <button id="center-btn">Center (Reset Position)</button>
+            <div class="header-buttons">
+                <button id="pause-btn" class="active-state">Pause</button>
+                <button id="center-btn">Center</button>
+            </div>
+        </div>
+
+        <div class="toggles">
+            <label><input type="checkbox" id="invert-x"> 左右反転 (Inv X)</label>
+            <label><input type="checkbox" id="invert-y"> 上下反転 (Inv Y)</label>
         </div>
 
         <div class="sliders">
@@ -33,13 +41,13 @@
                 <input type="range" id="sensitivity" min="0.1" max="5.0" step="0.1" value="1.5">
             </div>
             <div class="slider-group">
-                <label for="deadzone">Deadzone: <span id="dead-val">0.5</span></label>
+                <label for="deadzone">Gyro Deadzone: <span id="dead-val">0.5</span></label>
                 <input type="range" id="deadzone" min="0.0" max="3.0" step="0.1" value="0.5">
             </div>
         </div>
 
-        <div class="scroll-area" id="scroll-area">
-            <p>2-Finger Swipe to Scroll Here</p>
+        <div class="trackpad-area" id="trackpad-area">
+            <p><strong>Trackpad</strong><br>1-finger: Move<br>2-finger: Scroll</p>
         </div>
 
         <div class="mouse-buttons">
