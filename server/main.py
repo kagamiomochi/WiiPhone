@@ -66,7 +66,6 @@ async def main():
     
     print("="*40)
     print("WiiPhone Server Started")
-    print("="*40)
     print(f" Listening on ws://<Your-IP-Address>:{port}")
     print(f"AUTH TOKEN: {AUTH_TOKEN}")
     print("="*40)
