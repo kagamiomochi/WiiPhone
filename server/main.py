@@ -2,6 +2,7 @@ import asyncio
 import json
 import secrets
 import sys
+import socket
 import platform
 import logging
 from websockets.server import serve
@@ -64,10 +65,18 @@ async def main():
     host = "0.0.0.0"
     port = 8765
     
-    print("="*40)
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+    except Exception:
+        local_ip = "0.0.0.0" # fallback
+
     print("WiiPhone Server Started")
-    print(f" Listening on ws://<Your-IP-Address>:{port}")
-    print(f"AUTH TOKEN: {AUTH_TOKEN}")
+    print("="*40)
+    print(f" Listening on ws://{local_ip}:{port}")
+    print(f" AUTH TOKEN: {AUTH_TOKEN}")
     print("="*40)
     
     async with serve(handler, host, port):
