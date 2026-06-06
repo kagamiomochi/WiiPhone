@@ -65,10 +65,10 @@ async def main():
     port = 8765
     
     print("="*40)
-    print(" 🚀 Smartphone PC Remote Server Started")
+    print("WiiPhone Server Started")
     print("="*40)
     print(f" Listening on ws://<Your-IP-Address>:{port}")
-    print(f" 🔑 AUTH TOKEN: {AUTH_TOKEN}")
+    print(f"AUTH TOKEN: {AUTH_TOKEN}")
     print("="*40)
     
     async with serve(handler, host, port):
